@@ -22,6 +22,9 @@ public class LeapYearSolution
 
 		boolean isLeap = false;
 
+
+		// Note, there are simpler ways to write this conditional.
+		// This is just one way that's rather clear.
 		if (year % 4 == 0) {
 			// Divisible by 4
 			if (year % 100 == 0) {
