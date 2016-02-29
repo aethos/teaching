@@ -7,7 +7,6 @@
 public class BalloonSolution
 {
 	private double volume;
-	public static numBalloons = 0;
 	
 	/** 
 	 * Balloon Constructor, just takes initial volume
@@ -16,7 +15,6 @@ public class BalloonSolution
 	public Balloon(double v)
 	{
 		this.volume = v;
-		numBalloons++;
 	}
 
 	/** Method to return volume
