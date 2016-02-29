@@ -20,6 +20,7 @@ public class BalloonSolution
 	}
 
 	/** Method to return volume
+	 * Accessor
 	 * @return volume
 	 */
 	public double getVolume()
@@ -28,6 +29,7 @@ public class BalloonSolution
 	}
 
 	/** Method to return surface area
+	 * Accessor
 	 * @return surface area
 	 */
 	public double getSurfaceArea()
@@ -38,6 +40,7 @@ public class BalloonSolution
 	}
 
 	/** Method to return radius
+	 * Accessor
 	 * @return radius
 	 */
 	public double getRadius()
@@ -47,6 +50,7 @@ public class BalloonSolution
 	}
 
 	/** Adds air to the balloon
+	 * Mutator
 	 * @param amt Amount of air to add
 	 */
 	public void addAir(double amt)
