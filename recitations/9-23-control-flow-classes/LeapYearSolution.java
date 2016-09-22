@@ -9,50 +9,50 @@ Test cases:
 	2400 -- Tests "is divisible by 4 and 100 and 400"
 	Possible edge cases?
 @Author Ethan Adams
-@Version 1.0
+@Version 1.1
 */
 public class LeapYearSolution
 {
 	public static void main(String[] args)
 	{
+		// Accept user input
 		Scanner user = new Scanner(System.in);
-
 		System.out.print("Kindly enter a year: ");
 		int year = user.nextInt();
 
-		boolean isLeap = false;
+		// require a positive year
+		while (year < 0) {
+			System.out.print("A non-negative year, please? ");
+			year = user.nextInt();
+		}
 
+		boolean isLeap = false;
 
 		// Note, there are simpler ways to write this conditional.
 		// This is just one way that's rather clear.
 		if (year % 4 == 0) {
-			// Divisible by 4
 			if (year % 100 == 0) {
-				// Divisible by 100
 				if (year % 400 == 0) {
-					// Divisible by 400
-					isLeap = true;
+					isLeap = true; // divisible by 4, 100, and 400
 				}
 				else {
-					// Not divisible by 400
 					isLeap = false;
 				}
 			}
 			else {
-				// Not divisible by 100
-				isLeap = true;
+				isLeap = true; // divisible by 4 but not by 100
 			}
 		}
 		else {
-			// Not divisible by 4
 			isLeap = false;
 		}
 
+		// print result
 		if (isLeap) {
 			System.out.println("Hooray, it's a leap year!");
 		}
 		else {
-			System.out.println("It's not a leap year you fool!");
+			System.out.println("It's not a leap year you goober!");
 		}
 	}
 }
