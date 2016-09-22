@@ -8,7 +8,7 @@ Test cases:
 	2100 -- Tests "is divisible by 4 and 100, but not 400"
 	2400 -- Tests "is divisible by 4 and 100 and 400"
 	Possible edge cases?
-@Author Ethan Adams + 1004
+@Author Ethan Adams
 @Version 1.0
 */
 public class LeapYearSolution

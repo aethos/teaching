@@ -1,17 +1,3 @@
-###R4.12:
-	Explain the differences between 2, 2.0, '2', "2", and "2.0".
-	What are the results of these comparisons?
-		(true / false / Compiler Error / Runtime Error)
-
-	(2 == 2.0) 						
-	(2 == "2")						
-	(String.valueOf('2') == "2") 	
-	("2.0" == "2") 					
-	("2" == "2") 					
-	("2".equals("2"))				
-	(Integer.parseInt("2") == Integer.parseInt("2.0")) 
-	('2' == 50)						
-
 ###E4.23:
 	Implement a class Balloon with these methods:
 		add some amount of air
@@ -29,3 +15,6 @@
 	But, if a year is also divisible by 400, then it is a leap year.
 
 	Come up with a set of test cases for this input.
+	
+
+###How to Google:
