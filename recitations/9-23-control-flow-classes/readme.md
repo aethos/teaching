@@ -33,6 +33,7 @@ As a bonus, prevent the user from entering years less than 0.
 	- Name, Header, Encoding
 - Formatting
 	- Braces, Indentation, White Space
+	- Commenting!
 - Naming
 	- Classes, Variables, Methods, Constants
 	- "Magic Numbers"
