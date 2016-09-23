@@ -35,17 +35,10 @@ public class LeapYearSolution
 				if (year % 400 == 0) {
 					isLeap = true; // divisible by 4, 100, and 400
 				}
-				else {
-					isLeap = false;
-				}
 			}
 			else {
 				isLeap = true; // divisible by 4 but not by 100
 			}
-		}
-		else {
-			isLeap = false;
-		}
 
 		// print result
 		if (isLeap) {
