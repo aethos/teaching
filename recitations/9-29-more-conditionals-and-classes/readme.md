@@ -23,7 +23,7 @@ For the following plural country names, use les:
 
 
 ####Scope:
-- Concept: <em>Where is each variable valid?<em>
+- Concept: <em>Where is each variable valid?</em>
 - What is an instance variable?
 - What is a function parameter?
 - Follow the {}!
