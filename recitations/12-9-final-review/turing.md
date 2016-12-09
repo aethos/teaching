@@ -8,6 +8,8 @@
 
 	What is the Church-Turing thesis?
 
+	What did you think of The Imiatation Game?
+
 
 ###R12.19:
 
