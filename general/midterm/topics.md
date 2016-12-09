@@ -1,5 +1,11 @@
 #Topics for Midterm (Fall 2016)
 
+(note: S&G is Invitation, and Horst is Big Java)
+
+###Introduction
+- Algorithms (S&G Ch 1, 2, 3)
+	- What is Pseudocode? What types of operations are there?
+	- 
 
 
 
