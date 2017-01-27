@@ -3,7 +3,6 @@
 - Selection Sort
 - Insertion Sort
 - Merge Sort
-- (Binary Search)
 
 ####Sorts:
 What are sorts? Sorts are a group of algorithms with a specific function. Recallthat an algorithm is a <em>well-defined procedure that transforms some given input in to output</em>. So for sorts, the input is some series of values. The output is the same values in non-decreasing order. Sorts have different time and space complexities, so the sort you'll want to pick will change from situtaion to situation. Let's go over a few!
@@ -128,5 +127,3 @@ Finally, we'll make the trivial step of comparing <b>8</b> to nothing, and add 8
 Done!
 
 The time complexity of mergesort is <b>O(nlogn)</b>. This is because there will be logn levels to the recursion tree, and each merge taking n time. In the example above, n = 4. There are two levels to the recursion tree, the first being the split into  <b>{3  8}  {7  6}</b> and the second level being the split into 	<b>{(8)  (3)}  {(7)  (6)}</b>. This fits with log(4) = 2. The total number of comparisions in the algorithm is <b>4 * 2 = 8</b>, which is correct!
-
-####Binary Search:
