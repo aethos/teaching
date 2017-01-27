@@ -1,4 +1,4 @@
-#Topics:
+#Sorts:
 - Sorts
 - Selection Sort
 - Insertion Sort
