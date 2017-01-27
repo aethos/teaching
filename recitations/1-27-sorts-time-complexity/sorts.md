@@ -64,10 +64,69 @@ On this last step we consider <b>1</b>. We'll compare 1 to 7, then to 5, then to
 
 Done!
 
+The time complexity for insertion sort is <b>O(n^2)</b>, meaning that in the worst case insertion sort will have to touch every element in the array n times, where n is the number of elements in the array. You might be thinking, "Hang on, that's the same complexity as selection sort, how could it be faster?" Remember, "big O" is worst case time analysis. In most cases, insertion sort performs far better than selection, because of the ability to eliminate unnecessary comparisions as we mentioned above. Selection sort will always carry out every single comparision, even after it has found the smallest element.
 
+As a sidenote, can you figure out the configuration of numbers that creates the worst case? It's the numbers in <em>decreasing</em> order. In this case, insertion sort actually behaves exactly the same as selection sort, and carries out every comparison!
 
 ####Merge Sort:
+Merge sort is divide and conquer algorithm. Divide and conquer algorithms are a family of algorithms you'll learn in more detail as you continue in your computer science career. They work on the basis of taking a problem and dividing it into smaller subproblems recursively, and then merging them back together. I know that sounds like a lot, but don't worry about it too much! Here's the simple pseudocode:
 
+- Given an array of values A.
+- Divide A into two smaller arrays, called Left and Right.
+- Sort Left by calling mergesort on the array.
+- Sort Right by calling mergesort on the array.
+- Merge Left and Right together to end up with a sorted array.
 
+And here's an example, where I'll mark the arrays with various brackets:
+
+	8  3  7  6
+
+This array is split into two subarrays, like this:
+
+	{8  3}  {7  6}
+
+This will keep going until the arrays are of size 1.
+
+	{(8)  (3)}  {7  6}
+
+Now we'll merge the subarrays <b>(8)</b> and <b>(3)</b> together, to get the sorted array <b>{3  8}</b>.
+
+	{3  8}  {7  6}
+
+Now we'll call mergesort on <b>{7  6}</b>, to split it into two smaller arrays.
+
+	{3  8}  {(7)  (6)}
+
+And we'll now merge them together to get this:
+
+	{3  8}  {6  7}
+
+Now, (finally!) we'll merge <b>{3  8}</b>  <b>{6  7}</b> together.
+
+	{3  8}  {6  7}
+
+This is a good moment to think about how many comparisions this merge will take. We can think about performing this merge by looking through the two arrays and adding the correct values into a new array. We'll compare <b>3</b> to <b>6</b>, and decide to insert <b>3</b> into our new array. 
+
+	[3] // our final array
+	{8}  {6  7}
+
+Now we'll compare <b>8</b> to <b>6</b>, and add <b>6</b>.
+
+	[3  6]
+	{8}  {7}
+
+Now we'll compare <b>8</b> to <b>7</b>, and add <b>7</b> to the array.
+
+	[3  6  7]
+	{8}  {}
+
+Finally, we'll make the trivial step of comparing <b>8</b> to nothing, and add 8 to the array.
+
+	[3  6  7  8]
+	{}  {}
+
+Done!
+
+The time complexity of mergesort is <b>O(nlogn)</b>. This is because there will be logn levels to the recursion tree, and each merge taking n time. In the example above, n = 4. There are two levels to the recursion tree, the first being the split into  <b>{3  8}  {7  6}</b> and the second level being the split into 	<b>{(8)  (3)}  {(7)  (6)}</b>. This fits with log(4) = 2. The total number of comparisions in the algorithm is <b>4 * 2 = 8</b>, which is correct!
 
 ####Binary Search:
