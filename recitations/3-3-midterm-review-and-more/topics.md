@@ -49,7 +49,7 @@ Example 3: Insertion Sort
 	}
 
 
-Misc:
+### Misc:
 - What are all the primative types in Java, and their sizes?
 - How can you convert the decimal number 42 to binary?
 - What are the primary components of the Von Newmann architecture?
