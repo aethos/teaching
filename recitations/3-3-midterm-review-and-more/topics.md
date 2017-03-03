@@ -2,7 +2,7 @@
 
 ### Some Terms Review:
 - Formal vs. Actual Parameter
-- Implicit vs. Implicit Parameter
+- Implicit vs. Explicit Parameter
 - Parameter vs. Argument
 - Acessor vs. Mutator Methods
 - Instance vs. Class Variable
