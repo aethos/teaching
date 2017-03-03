@@ -11,6 +11,7 @@
 - How do we calculate it?
 - What is big O notation?
 
+
 Example 1:
 
 	int[] array = new int[10];
