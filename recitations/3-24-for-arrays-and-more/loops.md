@@ -158,3 +158,71 @@ So why use enhanced for loops? They easy! You don't have to keep track of which 
 
 
 # Putting it Together
+
+So far, we've reviewed what a while loop is. We've learned the pieces of for loops and enhanced for loops. We've learned that we can write any enhanced for loop as a for loop, and any for loop as a while loop. They're really all the same kind of thing! So when do we use what?
+
+While loops are generally used for an indeterminate amount of iterations. Using an above example, you may want to keep performing a operation, such as accepting an int from the user, until some condition is false. We have no idea how many ints we will be accepting, and therefore no idea how many iterations we'll have. So we'll use something that looks like this: (full code at the top)
+
+	while (number != -1) {
+		System.out.println("Thanks!");
+		number = user.nextInt();
+		sum += number;
+	}
+
+For loops are used if we have a known exact number of iterations. If we want the sum of all numbers from 1 to 10, then we know exactly how many iterations we need, and can write a simple for loop like this:
+
+	int sum = 0;
+	for(int i = 1; i <= 10; i++) {
+		sum += i;
+	}
+
+For loops are also used when we need to keep track of indices. Let's say we have a method that needs to return the **index** of the smallest element. Our code will look like this:
+	
+	public int findMinIndex(int[] numbers) {
+		int minIndex = 0;
+		for(int i = 0; i < numbers.length; i++) {
+			if (numbers[i] < numbers[minIndex]) {
+				minIndex = i;
+			}
+		}
+		return minIndex;
+	}
+
+As you may remember, for loops handle indices. We would not be able to write method using an enhanced for loop, because on any given iteration, we would not know the index of the element we are considering. But, if we only needed to return the minimum **element** as opposed to the **index** of the minimum element, then we could write it with an enhanced for like this:
+
+	public int findMinIndex(int[] numbers) {
+		int min = 0;
+		for (int num: numbers) {
+			if (num < min) {
+				min = num;
+			}
+		}
+		return min;
+	}
+
+For loops are also necessary when you want to modify a collection as you iterate through it. This is because enhanced for loops simply give you the value of each element, and no power to change that value and save it. 
+
+	int[] numbers = new int[10];
+	for (int i = 0; i < numbers.length; i++) {
+		numbers[i] = numbers[i] * 2;
+	}
+
+This code iterates through an array and doubles the value of each element. We could not do this with an enhanced for loop, because we have no ability to modify the element once it is assigned to the loop variable.
+
+Therefore, enhanced for loops are useful when we need to touch every element of a collection exactly once. For example, getting the sum of an array of numbers, like this:
+
+	int[] numbers = new int[10];
+	int sum = 0;
+	for (int num : numbers) {
+		sum += num;
+	}
+
+This may seem like an edge case, but this actually happens a lot. You very often don't want to modify a collection, but simply look at all of the values in it.
+	
+
+####In summary:
+- Don't know how many iterations you need? -- use a while.
+- Know exactly how many iterations you need? -- use a for.
+- Need to keep track of indices as well as the elements? -- use a for.
+- Need to modify elements as you go? -- use a for.
+- Need to touch each element of a collection exactly one? -- use an enhanced for.
