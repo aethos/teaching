@@ -73,4 +73,40 @@ Let's look at an example. This loop calculates the sum of numbers 1 to 10.
 
 The intialization is `int i = 0`. This declares a new varaible `i`, and assigns it the value `0`. The termination condition is `i <= 10`. When this condition is `false`, the loop will stop. The increment is `i++`. After each iteration of the loop, `i` will be incremented by 1.
 
-Although this is the usual pattern of for loops
+So what's up with all this information we have to provide in a for loop? Well, the secret is that for loops are just convenient versions of while loops. _Any for loop can be written as a while loop, and any while loop can be written as a for loop_. We can rewrite the above example as a while loop like this:
+
+	int sum = 0;
+	int i = 1;   // initialization
+	while (i <= 10) {
+		sum += 1;
+		i++;    // increment
+	}
+
+As you can see, we moved our intialization directly above the start of the loop. The termination condition is the same between the two loops. The increment is the last statement of the loop. It turns out, programmers were writing this kind of loop with intialization and incremeninting very often, so the for loop was created to make it easy and simple.
+
+
+It's worth noting that for loops can get pretty weird. It's possible for any of the three parts in the header of the foor loop to be empty, and it's possible that the parts do not strictly relate to each other. All of the below are valid for loops -- but that does not mean they are good design!
+
+	int sum = 0;
+	int i;
+	for (i = 0; sum < 25; i++) {
+		sum = sum * 2 + 1;
+	}
+
+In the above loop, `sum` will run through the values `0, 1, 3, 7, 15, 31`. The variable `i` is used as a counter here, to see how many iteration it takes for the terminaiton condition, `sum < 25` to be false. In other words, how many times do we have to run the statement `sum = sum * 2 + 1;` before `sum` is greater than 25?
+
+	Scanner user = new Scanner(System.in);
+	int i;
+	for (i = 0; ; i++) {
+		if (user.nextInt() == -1) {
+			break;
+		}
+	}
+
+The above loop will count how many times a user enters an int that is not 0. Note that our termination condition is empty. Instead, we're using `break`. This is bad design, as we can perform the same functionality like this:
+
+	Scanner user = new Scanner(System.in);
+	int i;
+	for (i = 0; user.nextInt() == -1; i++) {
+
+	}
