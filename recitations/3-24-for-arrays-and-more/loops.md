@@ -4,7 +4,7 @@
 - Review of While
 - For
 - Enhanced For
-- Altogether and Patterns
+- Putting it Together
 
 ## Signposting:
 - What is a while loop?
@@ -82,7 +82,7 @@ So what's up with all this information we have to provide in a for loop? Well, t
 		i++;    // increment
 	}
 
-As you can see, we moved our intialization directly above the start of the loop. The termination condition is the same between the two loops. The increment is the last statement of the loop. It turns out, programmers were writing this kind of loop with intialization and incremeninting very often, so the for loop was created to make it easy and simple.
+As you can see, we moved our intialization directly above the start of the loop. The termination condition is the same between the two loops. The increment is the last statement of the loop. It turns out, programmers were writing this kind of loop with intialization and incremeninting very often, so the for loop was created to make it easy and simple. We can say that for loops are **syntatic sugar**. They're simply a different convenient syntax for while loops.
 
 
 It's worth noting that for loops can get pretty weird. It's possible for any of the three parts in the header of the foor loop to be empty, and it's possible that the parts do not strictly relate to each other. All of the below are valid for loops -- but that does not mean they are good design!
@@ -110,3 +110,51 @@ The above loop will count how many times a user enters an int that is not 0. Not
 	for (i = 0; user.nextInt() == -1; i++) {
 
 	}
+
+
+### Enhanced For
+The Enhanced For loop, also called the For-Each loop, is composed of a **loop variable** an **iterable**, and a **body** of statements. "Iterable" is a fancy word for a collection of things that can be iterated over. The loop variable is the variable that will be assigned to each element in the iterable/collection. 
+
+The flow for the enhanced for loop works like this:
+	- The loop variable is assigned to the first item in the iterable.
+	- The code in the body is executed.
+	- The loop variable is assigned to the next item in the iterable.
+	- The code in the body is executed
+	- And so on, until there are no more items in the iterable.
+
+Let's see an example:
+
+	int[] numbers = new int[10]; /* fill it to be 5, 2, 7, 3, 4 */
+	int sum = 0;
+	for (int num : numbers) {
+		sum += num;
+	}
+
+The above code creates an array of numbers, and then iterates over it. On each iteration, `num` will be the value of the number in the array of numbers. In this case, `num` will be `5`, then `2`, then `7`, and so on. On each iteration we add `num` to `sum`, giving us the sum of all the numbers in the array at the end of the loop.
+
+What's the difference between the enhanced for and the normal for? Let's write the same code above with a normal for loop to figure it out.
+
+	int[] numbers = new int[10]; /* fill it to be 5, 2, 7, 3, 4 */
+	int sum = 0;
+	for (int i = 0; i < numbers.length; i++) {
+		sum += numbers[i];
+	}
+
+In this loop, our loop variable is `i`. What values does `i` take on as the loop executes? It starts as 0, and each iteration is incremented by 1, so it goes through the values `0, 1, 2, ...`. The variable `i` represents an _index, the position of an element in the array_. In contrast, in the enhanced for above, the loop variable `num` represents _the actual value of the element in the array_. This is really important, so I'll say it again: _for loops run through indices, enhanced for loops run though elements_. Since `i` is the index of the elements, then we use `numbers[i]` to access the value in the array, the element at position `i`. 
+
+With this understanding we can write the normal for loop again to make it clear what's going on in the enhanced version?
+
+	int[] numbers = new int[10]; /* fill it to be 5, 2, 7, 3, 4 */
+	int sum = 0;
+	int num;
+	for (int i = 0; i < numbers.length; i++) {
+		num = numbers[i]; // secret!
+		sum += num;
+	}
+
+In the above code, we've added in the line `num = numbers[i]`. This is what is secretly happening when you write an enhanced for loop. Java keeps track of which elements you're looking at, and assigns the loop variable to the element at that position. So as with while loops and for loops, we can see that any enhanced for loop can be written as a for loop!
+
+So why use enhanced for loops? They easy! You don't have to keep track of which element you're looking at. You don't have to worry about a termination condition, because the loop will stop when you're out of elements. And you don't have to worry about incrementing, as Java will always give you the next element.
+
+
+# Putting it Together
