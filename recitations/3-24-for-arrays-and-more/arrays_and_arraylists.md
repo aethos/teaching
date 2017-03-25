@@ -3,7 +3,7 @@
 ## Outline:
 - Arrays
 - ArrayLists
-- Putting it Together
+- When should I use what?
 
 ## Signposting:
 - What is an array?
@@ -144,14 +144,7 @@ As a final note, you should know that ArrayLists are only able to hold objects, 
 
 	ArrayList<Integer> nums = new ArrayList<Integer>();
 
-## Putting it Together
-
-
-
-
-
-
-### To recap:
+## When should I use what?
 - Adding elements to a collection? Know how many? -- use an Array
 - Adding elements to a collection? Don't know how many? -- use an ArrayList
 - Do you have a fixed number of items, like a game board? -- use an Array
