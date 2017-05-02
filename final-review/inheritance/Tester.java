@@ -44,9 +44,9 @@ public class Tester
 		// how does each animal sound?
 		// Monkey will make animal noises
 		monkey.makeNoise();
-		// doggo will bark, as Dog overloaded the method
+		// doggo will bark, as Dog overode the method
 		doggo.makeNoise();
-		// Cat did not overload the method, so it will use the animal one
+		// Cat did not overrode the method, so it will use the animal one
 		kitten.makeNoise();
 		// Giraffe has overridden the method, but also calls the animal one.
 		tallBoy.makeNoise();
