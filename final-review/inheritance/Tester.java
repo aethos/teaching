@@ -66,7 +66,8 @@ public class Tester
 		we can only call Animal methods on it.
 		We can't call Cat's method knead(), because all we know about katto
 		is that it points to an Animal or some subclass of Animal.
-		So katto could point to a Dog!
+		So katto could point to a Dog, which does not have the knead() method.
+		That's the reason Java will not let you call knead() here.
 		*/
 
 		// katto.knead(); // doesn't work!
@@ -76,6 +77,29 @@ public class Tester
 		// Then we can all the Cat methods on it.
 		
 		((Cat)katto).knead();
+
+		/* 
+		What we have seen here is that the methods you can call depend
+		not on the object type, but rather the reference type.
+		'katto' is a reference to an Animal, so we can only call Animal methods
+		on it. If we want to call Cat specific methods, we must cast.
+		*/
+
+		/*
+		As a bit of a bonus, what happens when we try and cast our Cat object
+		into a Dog, like this?
+		*/
+
+		// ((Dog)katto).makeNoise();  // ClassCastException!
+		
+		/*
+		Surprise surprise, this will generate a runtime exception!
+		The exception we get is a ClassCastException, and it says
+		"Cat cannot be cast to Dog". 
+		This makes total sense -- Java has no defined way to turn a Cat into
+		a Dog. They have different methods, different instance varaibles,
+		it's too complicated.
+		*/
 
 
 		// We can define an ArrayList of Animals, and put all the animals in it
