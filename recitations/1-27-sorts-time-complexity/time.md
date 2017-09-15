@@ -60,13 +60,13 @@ Big-O notatation is a notation that describes the "asymtotic upper bound" of a f
 
 Similarly to how limits work, big-O allows us to elimiate constants and lower order terms, as they do not matter when our input size is really big. For example:
 
-	f(n) = 2n  		-->  O(f(n)) = O(2n) = O(n)
+	f(n) = 2n  	-->  O(f(n)) = O(2n) = O(n)
 	f(n) = n^2 + n	-->  O(f(n)) = O(n^2 + n) = O(n^2)
 	f(n) = n! + 8	-->  O(f(n)) = O(n! + 8) = O(n!)
 
 Now that we've got big-O down, let's integrate it with time complexity.
 
-###Big-O and Time Complexity:
+### Big-O and Time Complexity:
 Big-O is a useful way of looking at time complexity, and specifcally measures the "worst case" of the algorithm. That means that in every scenerio, we'll pick the worst possible outcome. For example, if we had the following block of code:
 
 	// randomly get the value n
