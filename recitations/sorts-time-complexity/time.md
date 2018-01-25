@@ -1,4 +1,4 @@
-#Time Complexity:
+# Time Complexity:
 - What is it?
 - What do we use it for, and why?
 - How do we calcuate time complexity?
@@ -6,15 +6,15 @@
 - Big-O and Time Complexity
 
 
-###What is Time Complexity?:
+### What is Time Complexity?:
 Time complexity is a measure of how much time it takes an algorithm to run, in terms of the size of the input, <b>n</b>. In other words, time complexity is a function that describes the running time of an algorithm. 
 
-###What do we use it for?:
+### What do we use it for?:
 Time complexity is a useful for determining the efficiency of an algorithm. It gives you an idea of the "blowup" of the algorithm -- how much additional work is needed for each additional piece of input. One way to think about it is a graph with the size of input on the x-axis, and the time to run the algorithm on the y-axis. What is the slope of the line? This will become clearer as we go forward.
 
 
 
-###How do we calculate time complexity?:
+### How do we calculate time complexity?:
 The first step in calculating time complexity is to pick the <b>work unit</b>. The work unit is a single operation that we consider as taking "one" time. This could be one second, one nanosecond, one minute, the units are not important. All we need to know is that this operation takes some amount of time. Examples of a work unit could be any of the following:
 
 - Adding two values together
@@ -55,18 +55,18 @@ We can apply the formlua for the sum of the arithmatic series <b>k + (k-1) + (k-
 
 So the time selection sort takes is <b>T(n) = (n-1)(n-2)/2</b>. This looks pretty complicated, but luckily we can simply using big-O notation! We'll come back to this example in a minute.
 
-###Big-O Notation:
+### Big-O Notation:
 Big-O notatation is a notation that describes the "asymtotic upper bound" of a function. That's a fancy way to say "how the function behaves as as the input gets really really big". You can think of it like taking the limit of a function as the input size <b>n</b> goes to infinity, as you might have done in math class.
 
 Similarly to how limits work, big-O allows us to elimiate constants and lower order terms, as they do not matter when our input size is really big. For example:
 
-	f(n) = 2n  		-->  O(f(n)) = O(2n) = O(n)
+	f(n) = 2n  	-->  O(f(n)) = O(2n) = O(n)
 	f(n) = n^2 + n	-->  O(f(n)) = O(n^2 + n) = O(n^2)
 	f(n) = n! + 8	-->  O(f(n)) = O(n! + 8) = O(n!)
 
 Now that we've got big-O down, let's integrate it with time complexity.
 
-###Big-O and Time Complexity:
+### Big-O and Time Complexity:
 Big-O is a useful way of looking at time complexity, and specifcally measures the "worst case" of the algorithm. That means that in every scenerio, we'll pick the worst possible outcome. For example, if we had the following block of code:
 
 	// randomly get the value n
