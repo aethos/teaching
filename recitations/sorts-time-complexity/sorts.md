@@ -1,36 +1,41 @@
-#Sorts:
+# Sorts:
 - Sorts
 - Selection Sort
 - Insertion Sort
 - Merge Sort
 
-####Sorts:
+### Sorts:
 What are sorts? Sorts are a group of algorithms with a specific function. Recallthat an algorithm is a <em>well-defined procedure that transforms some given input in to output</em>. So for sorts, the input is some series of values. The output is the same values in non-decreasing order. Sorts have different time and space complexities, so the sort you'll want to pick will change from situtaion to situation. Let's go over a few!
 
-####Selection Sort:
+### Selection Sort:
 Selection sort is a basic sort that works on the principle of running over the array and "selecting" the smallest value in each iteration, to swap with with current position. It slowly builds up a sorted section of the array until the until array is sorted. Here's the psuedocode:
 
-	sub selection_sort(A[]):
-	  for i = 0 to length(A):
-	    min_idx = i
-	    for j = i+1 to length(A):
-	      if A[j] < A[min_idx]:
-	        min_idx = j
-	    swap(i, min_idx)
+	// given array of values A
+	for (i = 0; i < A.length; i++) {
+	    minIndex = i
+	    for(j = i+1; j < A.length; j++) {
+	    	if (A[j] < A[minIndex]) {
+	    		minIndex = j
+	    	}
+	    }
+	    swap(i, minIndex)
+	}
 
 The time complexity of selection sort is <b>O(n^2)</b>, where n is the length of the array. This means that selection sort will "touch" every element in the array n times. The notation here, which is called "big-O", gives the time complexity for the worst case of the algorithm. This is true not only in the worst case, but actually in <em>every</em> case of running the algorithm. Can you see why? It's because, unlike insertion sort, selection sort will <em>always</em> traverse the entire unsorted portion of the array.
 
-####Insertion Sort:
+### Insertion Sort:
 Insertion sort works by maintaining a sorted section of the array, to which a new value is "inserted" into its correct position. Always think of insertion sort as having two sections in the array, the sorted section on the left, and the unsorted section on the right. We pick first value in the unsorted portion and put it in the sorted portion. It's usually faster that selection sort, which makes it a popular sorting algorithm. Here's the pseudocode:
 
-	sub insertion_sort(A):
-		for i = 1 to length(A):
-			key = A[i]
-			j = i-1
-			while j >= 0 and key < A[j]:
-				A[j+1] = A[j]
-				j = j - 1
-			A[j+1] = key
+	// given array of values A
+	for (i = 1; i < A.length; i++) {
+		key = A[i]
+		j = i-1
+		while (j >= 0 && key < A[j]) {
+			A[j+1] = A[j]
+			j = j - 1
+		}
+		A[j+1] = key
+	}
 
 
 A few things to note here. We start considering values from the <em>second</em> position in the array (index 1). Why? Remember that we want to divide the array into two sections, sorted and unsorted. When we start the algorithm, we consider the first element in the array as in the sorted section. We could start with the sorted section as empty, but since one element by itself is sorted, we might as well start with the first element.
@@ -67,7 +72,7 @@ The time complexity for insertion sort is <b>O(n^2)</b>, meaning that in the wor
 
 As a sidenote, can you figure out the configuration of numbers that creates the worst case? It's the numbers in <em>decreasing</em> order. In this case, insertion sort actually behaves exactly the same as selection sort, and carries out every comparison!
 
-####Merge Sort:
+### Merge Sort:
 Merge sort is divide and conquer algorithm. Divide and conquer algorithms are a family of algorithms you'll learn in more detail as you continue in your computer science career. They work on the basis of taking a problem and dividing it into smaller subproblems recursively, and then merging them back together. I know that sounds like a lot, but don't worry about it too much! Here's the simple pseudocode:
 
 - Given an array of values A.
